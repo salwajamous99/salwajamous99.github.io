@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+<style>
+    label,h2,p{
+        font-family: bold;
+        color: white;  
+    font-size: 30px;}
+    
+    
+</style>
+</head>
+
+<body style='background-image: url(https://static.vecteezy.com/system/resources/previews/011/141/899/original/dark-blue-background-modern-line-stripes-curve-abstract-presentation-background-with-copy-space-vector.jpg);   object-fit: cover;
+'>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">My Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="resume.html">My Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">My Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Me</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div id="contact" class="d-flex justify-content-center">
+      <div class="col-md-6">
+        <h2>Contact Me</h2>
+        <p>Introduction to contact form goes here.</p>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <p id="form-success" style="display: none;">Form submitted successfully!</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Form validation and submission
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const message = document.getElementById('message');
+      if (name.value.trim() === '' || email.value.trim() === '' || message.value.trim() === '') {
+        alert('All fields are required!');
+      } else {
+        document.getElementById('form-success').style.display = 'block';
+        form.reset();
+      }
+    });
+
+    // Change text color on input change
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('change', () => {
+        input.style.color = 'red';
+      });
+    });
+
+    // Hover effects on nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.style.fontSize = '1.2rem';
+        link.style.color = 'red';
+      });
+      link.addEventListener('mouseout', () => {
+        link.style.fontSize = '';
+        link.style.color = '';
+      });
+    });
+  </script>
+  
+  
+<footer>
+    <div>
+    <p>&copy; 2023 Your Salwa Jamous. All rights reserved.</p>
+     <div class="social-media" style="float:right">
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  <br>
+</div>
+  </div>
+</footer>
+</body>
+
+</html>

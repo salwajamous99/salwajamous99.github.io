@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">My Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="resume.html">My Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">My Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Me</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <div id="portfolio">
+      <h2>My Portfolio</h2>
+      <div class="project">
+        <h3>Etrevago</h3>
+        <img src="11.jpg" alt="Project 1" onclick="changeImage(this)">
+         <img src="12.jpg" alt="Project 1" onclick="changeImage(this)">
+          <img src="13.jpg" alt="Project 1" onclick="changeImage(this)">
+           <img src="14.jpg" alt="Project 1" onclick="changeImage(this)">
+           
+          
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Change image on project click
+    function changeImage(image) {
+      const imageUrl = 'https://media.istockphoto.com/vectors/checkmark-vector-icon-put-a-green-symbol-on-the-white-background-vector-id1151872207?k=20&m=1151872207&s=170667a&w=0&h=NzKOi1fjRT-jYlohJ7a15LRWHC3wK0LjTu1fi9yOQYQ=';
+      image.src = imageUrl;
+    }
+
+    // Hover effects on nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.style.fontSize = '1.2rem';
+        link.style.color = 'red';
+      });
+      link.addEventListener('mouseout', () => {
+        link.style.fontSize = '';
+        link.style.color = '';
+      });
+    });
+  </script>
+  <footer>
+    <div>
+    <p>&copy; 2023 Your Salwa Jamous. All rights reserved.</p>
+     <div class="social-media" style="float:right">
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+  <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  <br>
+</div>
+  </div>
+</footer>
+  
+</body>
+
+</html>
